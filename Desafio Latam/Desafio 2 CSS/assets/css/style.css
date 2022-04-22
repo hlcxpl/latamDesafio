@@ -1,0 +1,86 @@
+.SeccionPrincipal {
+    height: 20em;
+    padding: 5em;
+    font-size: 2em;
+    background-image: url("../imgs/marvel-4k-obra-de-arte-1440p-resolucion-hd-4k-fondo-de-pantalla.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.SeccionPrincipal h1 {
+    margin: 0px;
+    margin-top: 200px;
+    font-weight: 900px;
+    text-align: center;
+    color: white;
+}
+
+.SeccionPrincipal h1:hover {
+    color: aqua;
+}
+
+.SeccionPrincipal p {
+    text-align: center;
+    color: white;
+}
+
+.SeccionPrincipal p:hover {
+    color: aquamarine;
+}
+
+p {
+    color: #ddd;
+    font-weight: 500;
+}
+
+p:hover {
+    color: aquamarine;
+    font-weight: 900;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
+    background-color: #2e2e2e;
+}
+
+.products {
+    width: 80%;
+    margin: auto;
+}
+
+.products td {
+    width: 50%;
+    padding: 2em;
+}
+
+.products img {
+    width: 100%;
+    border: solid 1px #ddd;
+}
+
+.footer {
+    height: 3em;
+    line-height: 3em;
+    background-color: rgb(59, 125, 206);
+    color: white;
+    text-align: center;
+    font-weight: 900;
+}
+
+.zoomIt {
+    display: block !important;
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    -ms-transition: -ms-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.zoomIt:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
