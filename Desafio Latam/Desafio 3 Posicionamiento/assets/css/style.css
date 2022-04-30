@@ -1,0 +1,187 @@
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700&display=swap');
+
+/* Estilos */
+body {
+    background-color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* header */
+header h1 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    opacity: 1;
+    font-size: 59px;
+    background-color: black;
+    height: 59px;
+    margin: 0px;
+}
+
+header h1:hover {
+    color: chartreuse;
+}
+
+/* titulo */
+.divtitulo {
+    text-align: center;
+    background-color: black;
+    height: 73px;
+}
+
+/* imagen back ground */
+.primeraImg {
+    width: 100%;
+    margin: auto;
+}
+
+.primeraImg img {
+    width: 100%;
+}
+
+/* seccion informacion */
+.informacion {
+    height: 348px;
+    margin: 0px 150px 0px 150px;
+}
+
+.pIguana {
+    display: inline-block;
+    height: auto;
+    width: 475px;
+    margin-top: 75px;
+    margin-bottom: 76px;
+}
+
+.pIguana p {
+    color: white;
+    opacity: 1;
+    width: 100%;
+}
+
+.pIguana p:hover {
+    color: chartreuse;
+}
+
+.iguana1 {
+
+    width: 399px;
+    height: 237px;
+    margin-top: 60px;
+    margin-bottom: 66px;
+    float: right;
+}
+
+.iguana1 img {
+    width: 100%;
+    height: 100%;
+}
+/* seccion caracteristicas */
+.caracteristicas {
+    background-color: #1E1A13;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    height: 348px;
+}
+
+.caracteristicas h3 {
+    padding-top: 2em;
+    font-weight: 400;
+    opacity: 0.98;
+}
+
+.caracteristicas h3:hover {
+    color: chartreuse;
+}
+
+.caracteristicas li {
+    display: inline-block;
+    width: 25%;
+    margin-top: 2em;
+}
+
+.caracteristicas li i {
+    font-size: 1em;
+}
+
+.caracteristicas li i:hover {
+    color: chartreuse;
+}
+
+.caracteristicas li span {
+    display: block;
+    font-size: 1em;
+    font-weight: 100;
+}
+
+.caracteristicas li span:hover {
+    color: chartreuse;
+}
+/* galeria */
+.galeria {
+    width: 100%;
+    height: 348px;
+    text-align: center;
+    display: block;
+}
+
+.imgGaleria {
+    display: inline-block;
+    width: 20em;
+    height: 15em;
+    margin: 60px 20px;
+}
+
+.imgGaleria img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    -ms-transition: -ms-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.imgGaleria img:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+/* footer */
+footer {
+    text-align: center;
+    background-color: #1E1A13;
+    color: white;
+    height: 102px;
+    width: 100%;
+    opacity: 0.94;
+}
+
+footer p {
+    padding-top: 40px;
+}
+
+footer p:hover {
+    color: chartreuse;
+    padding-top: 40px;
+}
+/* transiciones */
+.zoomIt {
+    display: block !important;
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    -ms-transition: -ms-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.zoomIt:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
