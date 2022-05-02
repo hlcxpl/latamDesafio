@@ -1,0 +1,32 @@
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+/* variables */
+:root {
+    --oscuro: #212529;
+    --gris-laro: #707070;
+    --light: #F8F9FA;
+    --white: #fff;
+    --success: #28a745;
+}
+
+.success{
+    background-color: var(--success);
+}
+nav {
+    background-color: var(--succes);
+}
+
+.card-body p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 300;
+}
+.roboto500{
+    font-family: 'Roboto', sans-serif;
+    font-size: 500;
+}
+
+
+
+
+
