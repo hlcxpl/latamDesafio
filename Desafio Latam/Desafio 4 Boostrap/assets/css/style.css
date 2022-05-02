@@ -13,9 +13,6 @@
 .success{
     background-color: var(--success);
 }
-nav {
-    background-color: var(--succes);
-}
 
 .card-body p {
     font-family: 'Roboto', sans-serif;
