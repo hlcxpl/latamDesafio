@@ -35,18 +35,28 @@ i:hover {
     border-collapse: collapse;
 }
 
+.navigations1 {
+    border: 0.1px solid #828485;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    border-collapse: collapse;
+}
+
 .text {
     width: 60%;
     display: flex;
     flex-direction: column;
-    text-align:left;
+    text-align: left;
 }
 
 .text h3 {
     padding: 0;
     margin: 0;
     font-size: 1em;
-    color: #828485;
+    color: black;
 }
 
 .text p {
@@ -55,6 +65,29 @@ i:hover {
     font-size: 0.7em;
     color: #bec1bb;
 }
+
+.text1 {
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1 1 auto;
+}
+
+.text1 h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+    color: black;
+}
+
+.text1 p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.7em;
+    color: #bec1bb;
+}
+
 
 .imge {
     margin: auto;
@@ -67,13 +100,27 @@ i:hover {
     height: 100%;
     border-radius: 50%;
     border: 1.5px solid #cdc3e6;
-    
+
+}
+
+.imge1 {
+    margin: auto;
+    width: 2.5em;
+    height: 2.5em;
+    flex: 1 1 auto;
+}
+
+.imge1 img {
+    width: 70%;
+    height: 90%;
+    border-radius: 50%;
+    border: 1.5px solid #cdc3e6;
 }
 
 .newChat {
     border: 0.1px solid #828485;
     width: 100%;
-    height: 15vh;
+    height: 12vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,12 +171,20 @@ main {
 .principal img {
     width: 100%;
 }
-.box{
+
+.box {
     margin: auto;
     width: 30em;
 }
-.texto{
+
+.texto {
     text-align: center;
+}
+
+.full {
+    display: flex;
+    flex: 1 1 auto;
+    background-color: #E8ebe4;
 }
 
 @media only screen and (max-width: 100px) {
@@ -154,12 +209,14 @@ main {
     .nav {
         width: 100%;
     }
-    main{
-       display: flex;
-       flex-direction: column;
+
+    main {
+        display: flex;
+        flex-direction: column;
     }
-    .box{
+
+    .box {
         width: fit-content;
     }
-    
+
 }
