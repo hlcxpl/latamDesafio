@@ -103,15 +103,16 @@ i:hover {
 }
 
 .imge1 {
-    margin: auto;
-    width: 2.5em;
-    height: 2.5em;
-    flex: 1 1 auto;
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 2em;
+    height: 2em;
+    
 }
 
 .imge1 img {
-    width: 70%;
-    height: 90%;
+    width:100%;
+    height: 100%;
     border-radius: 50%;
     border: 1.5px solid #cdc3e6;
 }
