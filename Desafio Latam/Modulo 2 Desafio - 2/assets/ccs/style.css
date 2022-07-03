@@ -10,7 +10,6 @@ html {
 
 body {
     min-height: 100%;
-
 }
 
 .grid-container > * {
@@ -27,9 +26,9 @@ body {
     align-items: center;
 }
 
-.sidebar{
- grid-area: sidebar;
- background-color: #e8ebe4;
+.sidebar {
+    grid-area: sidebar;
+    background-color: #e8ebe4;
 }
 
 
@@ -63,33 +62,38 @@ body {
     gap: 2em;
 }
 
-.asideflex{
+.asideflex {
     padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.asideflex p{
+
+.asideflex p {
     padding-top: 0.5em;
 }
-.asideflex span{
-color: grey;
+
+.asideflex span {
+    color: grey;
 }
+
 .item {
     background-color: white;
     display: flex;
     flex-flow: column;
 }
-.item-img{
+
+.item-img {
     height: 50vh;
-    width:auto;
+    width: auto;
 }
 
 .item img {
     width: 100%;
     height: 100%;
 }
-.item button{
+
+.item button {
     background-color: #25527b;
     color: white;
     font-size: large;
@@ -113,9 +117,9 @@ color: grey;
         grid-template-columns: auto auto auto;
         gap: 2em;
     }
-
 }
-@media (max-width:1000px){
+
+@media (max-width:1000px) {
     .grid-container2 {
         display: grid;
         grid-template-columns: auto auto;
@@ -123,7 +127,7 @@ color: grey;
     }
 }
 
-@media (max-width:400px)  {
+@media (max-width:400px) {
     .grid-container2 {
         display: grid;
         grid-template-columns: auto;
