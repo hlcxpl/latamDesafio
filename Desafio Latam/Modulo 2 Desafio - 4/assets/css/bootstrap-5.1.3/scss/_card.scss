@@ -103,8 +103,6 @@
 
 .card-fixed-width{
   @extend .card;
-  @extend .bg-dark;
-  @extend .text-ligh;
   width:20rem;
   border-radius: 5px;
 }
