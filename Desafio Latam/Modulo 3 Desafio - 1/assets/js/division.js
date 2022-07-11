@@ -1,5 +1,5 @@
-a=prompt("ingrese valo de a: ");
-b=prompt("ingrese valo de b: ");
+var a=prompt("ingrese valo de a: ");
+var b=prompt("ingrese valo de b: ");
 
 resultado=Number(a/b);
-alert("La resta es igual a: "+resultado)
+alert("La división es igual a: "+resultado)
