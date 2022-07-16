@@ -5,63 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <script src="/assets/js/resta.js"></script> -->
-    <!-- <script src="/assets/js/multiplicacion.js"></script> -->
-    <!-- <script src="/assets/js/division.js"></script> -->
-    <!-- CSS only -->
     <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Desafio 1 Mddulo 3</title>
+
 </head>
 
 <body>
-    <div class="card m-auto d-flex align-content-center bg-dark text-light text-center my-5" style="width: 20rem;">
+    <div class="card m-auto bg-dark text-light text-center my-5" style="width: 20rem;">
         <img src="/assets/imgs/compu.png" class="card-img-top" alt="compu">
-        <div class="card-body  ">
-          <h5 class="card-title">Card title</h5>
-          <input type="text" id]="">
-          <input type="color" name="" id="">
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card-body d-flex flex-column justify-content-center ">
+            <h5 class="card-title">Producto NoteBook</h5>
+            <br>
+            <input type="number" id="numero">
+            <br>
+            <input type="color" id="color">
+            <p class="card-text"> Precio: <span id="precioInicial">400000</span></p>
+            <a onclick="
+             precioTotal.innerHTML= Number(numero.value)*Number(precio.innerHTML)
+             cantidadTotal.innerHTML= numero.value
+             colorContainer.style.backgroundColor = color.value
+            " class="btn btn-primary">Calcular</a>
         </div>
-      </div>
-    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, suscipit fugit. Excepturi perferendis numquam tempore harum suscipit corrupti ad voluptatibus laboriosam! Animi placeat optio aspernatur consectetur deleniti aliquid laboriosam modi?</p>
-    <h2>hola saludos</h2> -->
-    <!-- <p>El arrendador declara que es propietario del inmueble, ubicado en <span
-            class="el1">__________</span>,departamento<span class="el2">___</span>, de la comuna<span
-            class="el3">______</span>.</p> -->
+        <div>
+            <h2>Precio total: <span id="precioTotal"></span></h2>
+            <h2>Cantidad: <span id="cantidadTotal"></span></h2>
+            <h2 class="d-flex justify-content-center">Color:  <div class="mx-1 " id="colorFinal"></div>
+            </h2>
+        </div>
+    </div>
 
-    <!-- <img src="https://placedog.net/500/500" alt=""> -->
 
-    <!-- <h1></h1> -->
-    <!-- <script src="/assets/js/division.js"></script> -->
-    <!-- <script src="/assets/js/parrafo.js"></script> -->
     <script>
-        // info1 = prompt("ingrese dirección");
-        // info2 = prompt("ingrese Numero de Departamento");
-        // info3 = prompt("ingrese nombre de la comuna");
+        //Paso 1 Crear variables de Entrada
+        numero = document.querySelector('#numero');
+        color = document.querySelector('#color');
+        precio = document.querySelector('#precioInicial');
 
-        // var ele1 = document.querySelector("p .el1");
-        // var ele2 = document.querySelector("p .el2");
-        // var ele3 = document.querySelector("p .el3");
-
-        // ele1.innerHTML(info1);
-        // ele2.innerHTML(info2);
-        // ele3.innerHTML(info3);
-        // camelcase= prompt("ingrese valor del border.radius");
-        // var titulo= document.querySelector('h2');
-        // titulo.style.color="#658525";
-
-        // var imagen= document.querySelector('img');
-        // imagen.style.borderRadius= camelcase+"%";
-
-        // /* <!--  titulo= document.querySelector("h1");
-        // titulo.innerHTML = "este contenido esta insertado con javascript"; -->*/
+        //Paso 2 Crear variables interactivas 
+        precioTotal = document.querySelector('#precioTotal');
+        cantidadTotal = document.querySelector('#cantidadTotal');
+        colorContainer = document.querySelector('#colorFinal');
     </script>
-<!-- JavaScript Bundle with Popper -->
-
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </html>

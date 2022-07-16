@@ -7,3 +7,15 @@ body{
 
     background-image: url("/assets/imgs/bg.jpg");
 }
+#color{
+    
+    width:100%;
+    height: 40px;
+}
+
+#colorFinal{
+    border-radius:50%;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+}
