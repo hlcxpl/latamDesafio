@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" style=" width:200px; height:200px; background-color: yellow; "></div>
+    <div id="div2" style=" width:200px; height:200px; background-color: blue;"></div>
+    <div id="div3" style=" width:200px; height:200px; background-color: red;"></div>
+    <div id="div4" style=" width:200px; height:200px; background-color: brown;"></div>
+
+    <script>
+
+        var a = 'violet';
+        var s = 'black';
+        var d = 'orange';
+        var w = 'purple';
+
+        div1 = document.querySelector('#div1')
+        div2 = document.querySelector('#div2')
+        div3 = document.querySelector('#div3')
+        div4 = document.querySelector('#div4')
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'a') {
+                div1.style.backgroundColor = a
+            } else if (event.key === 's') {
+                div2.style.backgroundColor = s
+            } else if (event.key === 'd') {
+                div3.style.backgroundColor = d
+            }else if (event.key === 'w') {
+                div4.style.backgroundColor = w
+            }
+        })
+    </script>
+</body>
+
+</html>
