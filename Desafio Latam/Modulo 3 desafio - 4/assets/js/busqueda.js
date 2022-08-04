@@ -82,4 +82,14 @@ const propiedades = [
   btn_nav = document.getElementById("btn_nav");
   btn_nav.addEventListener("click", () => busqueda());
   
+  function validar(){
+        input=document.querySelector('#input').value
+        input0=document.querySelector('#input0').value
+        input1=document.querySelector('#input1').value
+        if(input==''|| input0=='' || input1==''){
+            alert('faltan campos')
+        }else if(input<=0 || input0<=0 || input1<=0){
+            alert('los campos deben contener numeros mayores a cero')
+        }
+  }
   
