@@ -15,14 +15,14 @@ const tareas = [
 
 
 
-btnAgregar.addEventListener('click',function agregarValor() {
+btnAgregar.addEventListener('click', function agregarValor() {
     /* Agregamos el invitado al arreglo */
     nuevoTarea = { id: Date.now(), nombre: input.value, estado: false }
     tareas.push(nuevoTarea)
     input.value = ""
     /* Actualizamos la información en el HTML */
     renderTareas(tareas, tbody)
-} )
+})
 
 
 function renderTareas(arreglos, etiqueta) {
@@ -34,18 +34,18 @@ function renderTareas(arreglos, etiqueta) {
         <td class="px-5">
         <div class="input-group-prepend">
         <div class="input-group-text">
-        <input type="checkbox" class="status" ${variable}>
+        <input onclick="hallarEstadoTrue(${arreglo.id})" type="checkbox" class="status" ${variable}>
         </div>
         </div>
         </td>
         <td class="px-5"><button class="btn btn-light text-dark" onclick ="borrar(${arreglo.id})"> x </button><td></tr>`
 
         } else {
-        html += `<tr><td class="px-5">${arreglo.id}</td><td class="px-5">${arreglo.nombre}</td>
+            html += `<tr><td class="px-5">${arreglo.id}</td><td class="px-5">${arreglo.nombre}</td>
         <td class="px-5">
         <div class="input-group-prepend">
         <div class="input-group-text">
-        <input onclick="hallarEstado(${arreglo.id})" type="checkbox" class="status" >
+        <input onclick="hallarEstadoFalse(${arreglo.id})" type="checkbox" class="status" >
         </div>
         </div>
         </td>
@@ -61,11 +61,17 @@ function renderTareas(arreglos, etiqueta) {
 
 
 
-function hallarEstado(id){
-   const index = tareas.findIndex(tarea=>tarea.id == id)
-   tareas[index].estado = true
-   renderTareas(tareas, tbody)
-   console.log(tareas)
+function hallarEstadoTrue(id) {
+    const index = tareas.findIndex(tarea => tarea.id == id)
+    tareas[index].estado = false
+    renderTareas(tareas, tbody)
+    console.log(tareas)
+}
+function hallarEstadoFalse(id) {
+    const index = tareas.findIndex(tarea => tarea.id == id)
+    tareas[index].estado = true
+    renderTareas(tareas, tbody)
+    console.log(tareas)
 }
 
 
