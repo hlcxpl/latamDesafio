@@ -24,7 +24,9 @@ btnAgregar.addEventListener('click', function agregarValor() {
     renderTareas(tareas, tbody)
 })
 
-
+//FUNCION RENDER TAREA CON COMPROBACION DE ESTADO PARA ASIGNARLE EL VALOR CHECKED 
+//Y ASIGNARLE UNA FUNCION DE CAMBIO DE ESTADO A LOS TRUE Y SOLO LA FUNCION DE CAMBIO 
+//DE ESTADO A LOS FALSE 
 function renderTareas(arreglos, etiqueta) {
     let html = ""
     for (arreglo of arreglos) {
@@ -34,7 +36,7 @@ function renderTareas(arreglos, etiqueta) {
         <td class="px-5">
         <div class="input-group-prepend">
         <div class="input-group-text">
-        <input onclick="hallarEstadoTrue(${arreglo.id})" type="checkbox" class="status" ${variable}>
+        <input onclick="cambioEstadoTrue(${arreglo.id})" type="checkbox" class="status" ${variable}>
         </div>
         </div>
         </td>
@@ -45,7 +47,7 @@ function renderTareas(arreglos, etiqueta) {
         <td class="px-5">
         <div class="input-group-prepend">
         <div class="input-group-text">
-        <input onclick="hallarEstadoFalse(${arreglo.id})" type="checkbox" class="status" >
+        <input onclick="cambioEstadoFalse(${arreglo.id})" type="checkbox" class="status" >
         </div>
         </div>
         </td>
@@ -60,26 +62,27 @@ function renderTareas(arreglos, etiqueta) {
 
 
 
-
-function hallarEstadoTrue(id) {
+//BUSCAS EL ESTADO FALSE A TRAVEZ DE LA COMPROBACION QUE SE HACE EN LA FUNCION RENDER TAREA - LO BUSCAR EL ID Y CAMBIA EL ESTADO A FALSE
+function cambioEstadoTrue(id) {
     const index = tareas.findIndex(tarea => tarea.id == id)
     tareas[index].estado = false
     renderTareas(tareas, tbody)
     console.log(tareas)
 }
-function hallarEstadoFalse(id) {
+//BUSCAS EL ESTADO FALSE A TRAVEZ DE LA COMPROBACION QUE SE HACE EN LA FUNCION RENDER TAREA - LO BUSCAR EL ID Y CAMBIA EL ESTADO A TRUE
+function cambioEstadoFalse(id) {
     const index = tareas.findIndex(tarea => tarea.id == id)
     tareas[index].estado = true
     renderTareas(tareas, tbody)
     console.log(tareas)
 }
 
-
+// CONTADOR DE TAREA REALIZADA ATRAVEZ DEL ESTADO
 function contadorCheck(arreglo) {
     const checkToDo = arreglo.filter(tarea => tarea.estado == true)
     span2.innerHTML = checkToDo.length
 }
-
+// BORRAR LA TAREA CON BUTTON A TRAVEZ DEL ID Y EL INDICE
 function borrar(id) {
     const index = tareas.findIndex((ele) => ele.id == id)
     tareas.splice(index, 1)
