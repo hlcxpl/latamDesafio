@@ -1,4 +1,4 @@
-
+//VARIABLES DE LOS ELEMENTOS
 input = document.querySelector("#inputTareas")
 btnAgregar = document.querySelector("#agregarTareas")
 tbody = document.querySelector("tbody")
@@ -71,6 +71,7 @@ function cambioEstadoTrue(id) {
     renderTareas(tareas, tbody)
     console.log(tareas)
 }
+
 //BUSCAS EL ESTADO FALSE A TRAVEZ DE LA COMPROBACION QUE SE HACE EN LA FUNCION RENDER TAREA - LO BUSCA POR EL ID Y 
 //CAMBIA EL ESTADO A TRUE
 function cambioEstadoFalse(id) {
@@ -79,12 +80,14 @@ function cambioEstadoFalse(id) {
     renderTareas(tareas, tbody)
     console.log(tareas)
 }
+
 // CONTADOR DE TAREA REALIZADA ATRAVEZ DEL ESTADO - BUSCA LOS ESTADOS EN TRUE DEL ARREGLO Y LOS CUENTA A TRAVES
 // DEL METODO FILTER
 function contadorCheck(arreglo) {
     const checkToDo = arreglo.filter(tarea => tarea.estado == true)
     span2.innerHTML = checkToDo.length
 }
+
 // BORRAR LA TAREA CON BUTTON A TRAVEZ DEL ID Y EL INDICE UTILIZANDO EL METODO SPLICE
 function borrar(id) {
     const index = tareas.findIndex((ele) => ele.id == id)
