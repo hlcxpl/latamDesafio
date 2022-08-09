@@ -12,6 +12,8 @@ const tareas = [
     { id: 3000, nombre: 'ir a fiesta', estado: true },
     { id: 5000, nombre: 'ver Dr. strange', estado: false }
 ]
+//MOSTRAR LAS TAREAS
+renderTareas(tareas, tbody)
 
 // EVENTO CLICK PARA EL BOTON DE AGREGAR TAREA TOMA EL VALOR DEL INPUT Y LE ASIGNA UN ID Y UN ESTADO POR DEFAULT
 // EN FALSO EN UN ARREGLO
