@@ -4,6 +4,7 @@ btnAgregar = document.querySelector("#agregarTareas")
 tbody = document.querySelector("tbody")
 span = document.querySelector('#cuenta-tareas')
 span2 = document.querySelector('#realizadas')
+span3 = document.querySelector('#noRealizadas')
 
 //ARREGLO GLOBAL CON 3 TAREAS POR DEFAULT
 const tareas = [
@@ -29,43 +30,48 @@ btnAgregar.addEventListener('click', function agregarValor() {
 function renderTareas(arreglos, etiqueta) {
     let html = ""
     for(arreglo of arreglos) {
+        // SI EL ESTADO DEL ARREGLO ES TRUE LE ESCRIBE AL INPUT EL ATRIBUTO CHECKED Y HACE UN ONCLICK CON LA FUNCION
+        // CAMBIO DE ESTADO ES GUARDADA EN EL TEMPLATE EN LA VARIABLE HTML
         if(arreglo.estado == true) {
             variable = 'checked'
             html += `<tr><td class="px-5">${arreglo.id}</td><td class="px-5">${arreglo.nombre}</td>
         <td class="px-5">
         <div class="input-group-prepend">
         <div class="input-group-text">
-        <input onclick="cambioEstadoTrue(${arreglo.id})" type="checkbox" class="status" ${variable}>
+        <input onclick="cambioEstadoFalse(${arreglo.id})" type="checkbox" class="status" ${variable}>
         </div>
         </div>
         </td>
         <td class="px-5"><button class="btn btn-light text-dark" onclick ="borrar(${arreglo.id})"> x </button><td></tr>`
 
         } else {
+        // DE LO CONTRARIO EL ESTADO DEL ARRELGO ES FALSO HACE UN EL ONCLICK LLAMANDO A LA FUNCION CAMBIO DE ESTADO A TRUE
+        // Y GUARDA EL TEMPLATE EN LA VARIABLE HTML
             html += `<tr><td class="px-5">${arreglo.id}</td><td class="px-5">${arreglo.nombre}</td>
         <td class="px-5">
         <div class="input-group-prepend">
         <div class="input-group-text">
-        <input onclick="cambioEstadoFalse(${arreglo.id})" type="checkbox" class="status" >
+        <input onclick="cambioEstadoTrue(${arreglo.id})" type="checkbox" class="status" >
         </div>
         </div>
         </td>
         <td class="px-5"><button class="btn btn-light text-dark" onclick ="borrar(${arreglo.id})"> x </button><td></tr>`
         }
     }
-    //IMPRIME EL TEMPLATE EN LA ETIQUETA QUE PASEMOS COMO PARAMETROS
+    //IMPRIME EL TEMPLATE QUE ESTA ALOJADO EN LA VARIABLE HTML EN LA ETIQUETA QUE PASEMOS COMO PARAMETRO
     etiqueta.innerHTML = html;
     //CUENTA TODAS LAS TAREAS
     span.innerHTML = tareas.length
     //CUENTA LAS TAREAS EN TRUE
-    contadorCheck(tareas)
+    contadorCheckT(tareas)
+    contadorCheckF(tareas)
 }
 
 
 
 //BUSCAS EL ESTADO TRUE A TRAVEZ DE LA COMPROBACION QUE SE HACE EN LA FUNCION RENDER TAREA - LO BUSCA POR EL ID Y 
 //CAMBIA EL ESTADO A FALSE
-function cambioEstadoTrue(id) {
+function cambioEstadoFalse(id) {
     const index = tareas.findIndex(tarea => tarea.id == id)
     tareas[index].estado = false
     renderTareas(tareas, tbody)
@@ -74,7 +80,7 @@ function cambioEstadoTrue(id) {
 
 //BUSCAS EL ESTADO FALSE A TRAVEZ DE LA COMPROBACION QUE SE HACE EN LA FUNCION RENDER TAREA - LO BUSCA POR EL ID Y 
 //CAMBIA EL ESTADO A TRUE
-function cambioEstadoFalse(id) {
+function cambioEstadoTrue(id) {
     const index = tareas.findIndex(tarea => tarea.id == id)
     tareas[index].estado = true
     renderTareas(tareas, tbody)
@@ -83,9 +89,15 @@ function cambioEstadoFalse(id) {
 
 // CONTADOR DE TAREA REALIZADA ATRAVEZ DEL ESTADO - BUSCA LOS ESTADOS EN TRUE DEL ARREGLO Y LOS CUENTA A TRAVES
 // DEL METODO FILTER
-function contadorCheck(arreglo) {
+function contadorCheckT(arreglo) {
     const checkToDo = arreglo.filter(tarea => tarea.estado == true)
     span2.innerHTML = checkToDo.length
+}
+// CONTADOR DE TAREA REALIZADA ATRAVEZ DEL ESTADO - BUSCA LOS ESTADOS EN FALSE DEL ARREGLO Y LOS CUENTA A TRAVES
+// DEL METODO FILTER
+function contadorCheckF(arreglo) {
+    const checkToDo = arreglo.filter(tarea => tarea.estado == false)
+    span3.innerHTML = checkToDo.length
 }
 
 // BORRAR LA TAREA CON BUTTON A TRAVEZ DEL ID Y EL INDICE UTILIZANDO EL METODO SPLICE
