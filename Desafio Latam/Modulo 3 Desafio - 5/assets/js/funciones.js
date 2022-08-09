@@ -5,14 +5,12 @@ tbody = document.querySelector("tbody")
 span = document.querySelector('#cuenta-tareas')
 span2 = document.querySelector('#realizadas')
 
-
 //ARREGLO GLOBAL CON 3 TAREAS POR DEFAULT
 const tareas = [
     { id: 1000, nombre: 'comer a la hora', estado: false },
     { id: 3000, nombre: 'ir a fiesta', estado: true },
     { id: 5000, nombre: 'ver Dr. strange', estado: false }
 ]
-
 
 // EVENTO CLICK PARA EL BOTON DE AGREGAR TAREA TOMA EL VALOR DEL INPUT Y LE ASIGNA UN ID Y UN ESTADO POR DEFAULT
 // EN FALSO EN UN ARREGLO
