@@ -1,23 +1,35 @@
+//----------------VARIABLES----------------
 const apiUrl = "https://mindicador.cl/api/"
 const body = document.querySelector('body')
 const divSelect = document.querySelector('#divSelect')
 const btn = document.querySelector('#btn')
 const input = document.querySelector('#input')
-
+//INICIALIZAR MY CHART EN NULL PARA PODER DESTRUIRLO
+let myChart = null;
+//CONSULTANDO LA API PARA EXTRAER LOS KEYS DE LOS CAMBIOS
 async function cambioDivisa() {
-    const resp = await fetch(apiUrl)
-    const divisasJson = await resp.json()
-    return divisasJson
+    try {
+        const resp = await fetch(apiUrl)
+        const divisasJson = await resp.json()
 
+        var data = []
+        var divisas = []
+        var divisasKey = []
+        Object.keys(divisasJson).forEach(function (key) {
+            data = divisasJson[key];
+            divisas[key] = data.codigo;
+        });
+        divisasKey = Object.values(divisas);
+        var filtered = divisasKey.filter(x => x !== undefined);
+        renderInput(filtered, divSelect)
+    } catch (e) {
+        body.innerHTML = "Error: " + e.message
+    }
 }
+cambioDivisa()
 
-function getValue(divisasJson) {
-    const divisas = ["uf", "ivp", "dolar", "dolar_intercambio", "euro", "ipc", "utm", "imacec", "tpm", "libra_cobre", "tasa_desempleo", "bitcoin"]
-    renderInput(divisas, divSelect)
-}
 
-getValue()
-
+//FUNCION GENERAR EL SELECT CON 
 function renderInput(arreglos, etiqueta) {
     template = ""
     template2 = ""
@@ -29,71 +41,77 @@ function renderInput(arreglos, etiqueta) {
     etiqueta.innerHTML = template2
 }
 
-select = document.querySelector('#selector')
 
+
+
+//UN LISTENER EN UN BOTON PARA ACTIVAR TODAS LAS FUNCIONES QUE INTERVIENEN
 btn.addEventListener('click', async function () {
+    // opcion del selector
+    const select = document.querySelector('#selector')
     const inputParametro = validar(input.value)
     divisa = select.value
     const apiUrl2 = apiUrl + "" + select.value
     const divisasJson2 = await cambioDivisa2(apiUrl2)
     operation(divisasJson2, inputParametro)
-    const config = parchingData(divisasJson2, divisa)
-    renderGrafica(config);
+    parchingData(divisasJson2, divisa)
 })
-
+//FUNCION PARA CONECTAR CON LA API USANDO FETCH CON SU RESPECTIVO TRY Y CATCH 
 async function cambioDivisa2(apiUrl2) {
     try {
         const resp = await fetch(apiUrl2)
         const divisasJson2 = await resp.json()
         return divisasJson2
     } catch (e) {
-        throw (e.message)
+        body.innerHTML = "Error: " + e.message
     }
-
 }
-
+// FUNCION PARA HACER LA MULTIPLICACION DEL LAS DIVISAS  QUE RECIBE COMO PARAMETRO EL
+// JSON DONDE EXTRAEMOS EL CAMBIO DEL DIA Y LO DIVIDIMOS CON EL MONTO EN PESOS CHILENOS
 async function operation(divisasJson2, inputParametro) {
     const monto = inputParametro / divisasJson2.serie[0].valor
     const span = document.querySelector('#monto')
     ans = isNumber(monto);
     if (ans) {
-        span.innerHTML = `El monto de la operacion es: ${monto.toFixed(3)}`
+        span.innerHTML = `El monto de la operacion es: ${monto.toFixed(2)}`
     }
 }
-
+//FUNCION PARA OBTENER VALORES DESDE EL JSON PARA EL CHART
 async function parchingData(divisasJson2, nombreDivisa) {
     var valores = []
     var fechas = []
-
+    //FOR QUE ITERA LOS ULTIMOS 10 DIAS Y ENTREGAS LAS FECHAS Y VALORES 
     for (let i = 0; i < 10; i++) {
         valores[i] = divisasJson2.serie[i].valor
         fechas[i] = divisasJson2.serie[i].fecha
     }
-
+    //CONFIGURANDO EL CHART
     const chartType = "line"
-    const titulo = "Estadisticas" + ucwords(nombreDivisa)
+    const titulo = "Estadisticas " + ucwords(nombreDivisa)
     const lineColor = "green"
 
     const config = {
         type: chartType,
         data: {
-            labels: valores,
+            labels: fechas,
             datasets: [
                 {
                     label: titulo,
                     backgroundColor: lineColor,
-                    data: fechas
+                    data: valores
                 }
             ]
         }
     };
-    return config;
-}
 
-function renderGrafica(config) {
+    // PASANDO VALORES AL CHART JS  
     const chartDOM = document.getElementById("myChart");
-    new Chart(chartDOM, config);
-    chartDOM.style.backgroundColor = 'blue'
+    // SI ES DIFERENTE AL VALOR DE CLARADO SE DESTRUYE
+    if (myChart != null) {
+        myChart.destroy()
+    }
+    // SE VUELVE A INICIALIZAR
+    myChart = new Chart(chartDOM, config);
+    chartDOM.style.backgroundColor = 'white'
 }
 
 // ---------------------FUNCIONES DE VALIDACIONES---------------------------
