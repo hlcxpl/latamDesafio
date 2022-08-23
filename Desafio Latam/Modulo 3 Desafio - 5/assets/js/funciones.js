@@ -12,6 +12,7 @@ const tareas = [
     { id: 3000, nombre: 'ir a fiesta', estado: true },
     { id: 5000, nombre: 'ver Dr. strange', estado: false }
 ]
+
 //MOSTRAR LAS TAREAS
 renderTareas(tareas, tbody)
 
@@ -66,10 +67,9 @@ function renderTareas(arreglos, etiqueta) {
     span.innerHTML = tareas.length
     //CUENTA LAS TAREAS EN TRUE
     contadorCheckT(tareas)
+    //CUENTA LAS TAREAS EN FALSE
     contadorCheckF(tareas)
 }
-
-
 
 //BUSCAS EL ESTADO TRUE A TRAVEZ DE LA COMPROBACION QUE SE HACE EN LA FUNCION RENDER TAREA - LO BUSCA POR EL ID Y 
 //CAMBIA EL ESTADO A FALSE
