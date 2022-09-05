@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-desafio-1/static/css/main.9b52f681.css",
-    "main.js": "/react-desafio-1/static/js/main.85ce291e.js",
-    "static/js/787.49184bd5.chunk.js": "/react-desafio-1/static/js/787.49184bd5.chunk.js",
-    "index.html": "/react-desafio-1/index.html",
-    "main.9b52f681.css.map": "/react-desafio-1/static/css/main.9b52f681.css.map",
-    "main.85ce291e.js.map": "/react-desafio-1/static/js/main.85ce291e.js.map",
-    "787.49184bd5.chunk.js.map": "/react-desafio-1/static/js/787.49184bd5.chunk.js.map"
+    "main.css": "/latamDesafio/static/css/main.3552970a.css",
+    "main.js": "/latamDesafio/static/js/main.936c284b.js",
+    "static/js/787.49184bd5.chunk.js": "/latamDesafio/static/js/787.49184bd5.chunk.js",
+    "index.html": "/latamDesafio/index.html",
+    "main.3552970a.css.map": "/latamDesafio/static/css/main.3552970a.css.map",
+    "main.936c284b.js.map": "/latamDesafio/static/js/main.936c284b.js.map",
+    "787.49184bd5.chunk.js.map": "/latamDesafio/static/js/787.49184bd5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b52f681.css",
-    "static/js/main.85ce291e.js"
+    "static/css/main.3552970a.css",
+    "static/js/main.936c284b.js"
   ]
 }
