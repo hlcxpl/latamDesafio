@@ -1,0 +1,35 @@
+
+.App {
+  color:#ccc !important;
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 111, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.card {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 9, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+.card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(241, 15, 7, 0.873) !important;
+  transition: all 0.3s linear;
+}
+
+.card-body{
+  padding: 2rem 0 !important;
+}
+
+.card-text{
+  padding: 0.3rem 1rem !important;
+  font-size: 1rem;
+}
+
+.img-top{
+ transition: all 0.2s ease-in-out;
+}
+.img-top:hover{
+ transform: scale(1.8);
+ }
+ .overflow{
+  overflow: hidden;
+ }
