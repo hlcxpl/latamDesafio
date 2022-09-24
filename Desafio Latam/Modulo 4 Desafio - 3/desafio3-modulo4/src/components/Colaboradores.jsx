@@ -28,18 +28,23 @@ function Colaboradores({ BaseColaboradores }) {
                     </form>
                 </div>
             </nav>
+
             <div className="mb-3 p-3 mt-2">
                 <label htmlFor="formGroupExampleInput" className="form-label">Nombre del Colaborador</label>
                 <input onChange={(ev) => { handleChange(ev, 'nombre') }} type="text" className="form-control" id="formGroupExampleInput" placeholder="Ingresa el Nombre del Colaborador" />
             </div>
+
             <div className="mb-3 p-3">
                 <label htmlFor="formGroupExampleInput2" className="form-label">Email del Colaborador</label>
                 <input type="text" onChange={(ev) => { handleChange(ev, 'correo') }} className="form-control" id="formGroupExampleInput2" placeholder="Ingresa el correo del Colaborador" />
             </div>
 
             <button className="btn btn-primary m-3" onClick={handleClick}>Agregar</button>
+
             <hr />
+
             <h1 className="p-3">Listado de Colaboradores</h1>
+
             <ul >
                 {listacolaboradores.filter(
                     (colab) => {
@@ -51,6 +56,7 @@ function Colaboradores({ BaseColaboradores }) {
                     }
                 )}
             </ul>
+            
         </div>
     )
 }
