@@ -24,7 +24,7 @@ const Miapi = () => {
   return (
     <div>
      <Nav handleSearch={handleSearch}/>
-      <div className="row my-3">
+      <div className="row my-3">  
         {info.filter(
           (dia) => {
             return dia.title.toLowerCase().includes(buscador.toLowerCase())
@@ -41,9 +41,9 @@ const Miapi = () => {
             </div>
           </div>
         ).reverse()}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
   )
 }
 
